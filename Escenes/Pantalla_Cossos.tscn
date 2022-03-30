@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Cossos/Character.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Cossos/Terra.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Cossos/Death.tscn" type="PackedScene" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 512.5, 20 )
+
+[node name="Pantalla_Cossos" type="Node2D"]
+
+[node name="Terra2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 512, -703 )
+
+[node name="Terra3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 874, -250 )
+
+[node name="Death" parent="." instance=ExtResource( 3 )]
+position = Vector2( -2, 238 )
+
+[node name="Terra4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 150, -387 )
+
+[node name="Base Nivell" parent="." instance=ExtResource( 2 )]
+position = Vector2( 495, -20 )
+
+[node name="ColorRect" parent="Base Nivell" index="0"]
+margin_left = -495.0
+margin_right = 529.0
+
+[node name="CollisionShape2D" parent="Base Nivell" index="1"]
+position = Vector2( 17.5, 0 )
+shape = SubResource( 1 )
+
+[node name="Terra5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 874, -900 )
+
+[node name="Personatge1" parent="." instance=ExtResource( 1 )]
+position = Vector2( 512, -67 )
+
+[connection signal="body_entered" from="Death" to="Personatge1" method="_on_Area2D_body_entered"]
+
+[editable path="Base Nivell"]
