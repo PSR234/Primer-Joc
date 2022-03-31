@@ -66,13 +66,11 @@ func anima(velocitat):
 
 
 func mor():
-	position = Vector2(512, -66)
+	get_tree().change_scene("res://Escenes/Pantalla_Cossos.tscn")
 
 
 
-func _on_Area2D_body_entered(body):
-	position = Vector2(512, -66)
 
-
-func _on_VisibilityNotifier2D_screen_exited():
-	mor()
+func _on_Death_body_entered(body):
+	if body.is_on_group("Jugador"):
+		mor()
