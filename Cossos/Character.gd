@@ -10,10 +10,10 @@ var corrent = false
 
 func _physics_process(delta):
 	velocitat += gravetat * delta
-	if position.x > 1024:
-		position.x = 0
-	if position.x < 0:
-		position.x = 1024
+	#if position.x > 1024:
+	#	position.x = 0
+	#if position.x < 0:
+	#	position.x = 1024
 	
 	
 	if is_on_floor():
@@ -35,9 +35,12 @@ func _physics_process(delta):
 			velocitat.x *= 2
 			velocitat.y *= 1.3
 			corrent = true
+		else:
+			corrent = false
 	
 		if Input.is_action_just_released("sprint"):
 			corrent = false
+		
 	
 	velocitat = move_and_slide(velocitat, Vector2.UP)
 	anima(velocitat)
@@ -72,5 +75,5 @@ func mor():
 
 
 func _on_Death_body_entered(body):
-	if body.is_on_group("Jugador"):
+	if "Personatge1" in body.name:
 		mor()
