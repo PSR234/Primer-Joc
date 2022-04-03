@@ -69,7 +69,7 @@ func anima(velocitat):
 
 
 func mor():
-	get_tree().change_scene("res://Escenes/Pantalla_Cossos.tscn")
+	get_tree().change_scene("res://Escenes/Pantalla_Inicial.tscn")
 
 
 
@@ -77,3 +77,8 @@ func mor():
 func _on_Death_body_entered(body):
 	if "Personatge1" in body.name:
 		mor()
+
+
+func _on_Area2D_body_entered(body):
+	if "Personatge1" in body.name:
+		get_tree().change_scene("res://Escenes/Pantalla_Victòria.tscn")

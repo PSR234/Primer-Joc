@@ -51,42 +51,42 @@ color = Color( 0.976471, 0.572549, 0.321569, 1 )
 position = Vector2( 96, 10 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 8 )
-frame = 2
+frame = 4
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
 position = Vector2( 288, 10 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 8 )
-frame = 3
+frame = 5
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="."]
 position = Vector2( 480, 10 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 8 )
-frame = 2
+frame = 4
 playing = true
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="."]
 position = Vector2( 672, 10 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 8 )
-frame = 2
+frame = 4
 playing = true
 
 [node name="AnimatedSprite5" type="AnimatedSprite" parent="."]
 position = Vector2( 864, 10 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 8 )
-frame = 2
+frame = 4
 playing = true
 
 [node name="AnimatedSprite6" type="AnimatedSprite" parent="."]
 position = Vector2( 1056, 10 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 8 )
-frame = 2
+frame = 4
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
