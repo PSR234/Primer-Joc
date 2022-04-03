@@ -117,13 +117,14 @@ shape = SubResource( 16 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "Idle"
+frame = 1
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 scale = Vector2( 0.333333, 0.333333 )
 current = true
 limit_left = 0
-limit_top = -3300
+limit_top = -550
 limit_right = 1024
 limit_bottom = 50
 drag_margin_h_enabled = true

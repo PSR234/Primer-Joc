@@ -15,7 +15,7 @@ extents = Vector2( 512.5, 20 )
 load_path = "res://.import/Frame.png-969495df17b8d7c3c93751bcb6a80b18.stex"
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 13.75, 1620.5 )
+extents = Vector2( 13.75, 1627.25 )
 
 [sub_resource type="StreamTexture" id=4]
 load_path = "res://.import/Frame.png-969495df17b8d7c3c93751bcb6a80b18.stex"
@@ -121,7 +121,7 @@ margin_bottom = -2200.0
 texture = SubResource( 2 )
 
 [node name="CollisionShape2D" parent="Paret2" index="1"]
-position = Vector2( 1010, -1673 )
+position = Vector2( 1010, -1666.25 )
 shape = SubResource( 3 )
 
 [node name="Paret3" parent="." instance=ExtResource( 6 )]

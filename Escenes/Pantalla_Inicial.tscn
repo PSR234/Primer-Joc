@@ -1,0 +1,177 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Cossos/Character_Quiet.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Cossos/Terra.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Cossos/Death.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Imatges/Free/Terrain/Terra.png" type="Texture" id=4]
+[ext_resource path="res://Imatges/Free/Background/Pink.png" type="Texture" id=5]
+[ext_resource path="res://Border.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Imatges/Free/Terrain/Frame edge.png" type="Texture" id=7]
+[ext_resource path="res://Imatges/american_captain/American Captain.otf" type="DynamicFontData" id=8]
+[ext_resource path="res://Imatges/american_captain/American Captain.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://Escenes/Pantalla_Inicial.gd" type="Script" id=10]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 512.5, 20 )
+
+[sub_resource type="StreamTexture" id=2]
+load_path = "res://.import/Frame.png-969495df17b8d7c3c93751bcb6a80b18.stex"
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 13.75, 242 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 13.75, 486.375 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 64
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 32
+font_data = ExtResource( 9 )
+
+[node name="Pantalla_Inicial" type="Node2D"]
+script = ExtResource( 10 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_top = -584.0
+margin_right = 1023.0
+margin_bottom = 237.0
+texture = ExtResource( 5 )
+stretch_mode = 2
+
+[node name="Terra2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 639, -265 )
+
+[node name="Terra3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 21, -401 )
+
+[node name="Base Nivell" type="StaticBody2D" parent="."]
+position = Vector2( 495, -20 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Base Nivell"]
+position = Vector2( 17.5, 0 )
+shape = SubResource( 1 )
+
+[node name="TextureRect" type="TextureRect" parent="Base Nivell"]
+margin_left = -495.0
+margin_top = -20.0
+margin_right = -159.0
+margin_bottom = 29.0
+rect_scale = Vector2( 3.05, 3.05 )
+texture = ExtResource( 4 )
+stretch_mode = 2
+
+[node name="Paret1" parent="." instance=ExtResource( 6 )]
+
+[node name="TextureRect2" parent="Paret1" index="0"]
+margin_top = -521.0
+margin_bottom = -360.0
+texture = SubResource( 2 )
+
+[node name="CollisionShape2D" parent="Paret1" index="1"]
+position = Vector2( 13.75, -280 )
+shape = SubResource( 3 )
+
+[node name="Paret2" parent="." instance=ExtResource( 6 )]
+
+[node name="TextureRect2" parent="Paret2" index="0"]
+margin_left = 997.0
+margin_top = -522.0
+margin_right = 1006.0
+margin_bottom = -361.0
+texture = SubResource( 2 )
+
+[node name="CollisionShape2D" parent="Paret2" index="1"]
+position = Vector2( 1010, -279 )
+shape = SubResource( 3 )
+
+[node name="Paret3" parent="." instance=ExtResource( 6 )]
+
+[node name="TextureRect2" parent="Paret3" index="0"]
+margin_left = 998.0
+margin_top = -549.0
+margin_right = 1007.0
+margin_bottom = -228.0
+rect_rotation = 90.0
+rect_scale = Vector2( 3, 3.03 )
+texture = SubResource( 2 )
+
+[node name="CollisionShape2D" parent="Paret3" index="1"]
+position = Vector2( 511.625, -536 )
+rotation = 1.5708
+shape = SubResource( 6 )
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 512, -67 )
+
+[node name="Message" type="Label" parent="."]
+visible = false
+margin_left = 352.0
+margin_top = -357.0
+margin_right = 673.0
+margin_bottom = -267.0
+custom_fonts/font = SubResource( 4 )
+text = "JURASSIC JUMP"
+align = 1
+valign = 1
+
+[node name="Start" type="Button" parent="."]
+visible = false
+margin_left = 425.0
+margin_top = -220.0
+margin_right = 600.0
+margin_bottom = -145.0
+rect_pivot_offset = Vector2( 87, 37 )
+custom_fonts/font = SubResource( 5 )
+text = "PLAY"
+
+[node name="Easy" type="Button" parent="."]
+margin_left = 425.0
+margin_top = -450.0
+margin_right = 600.0
+margin_bottom = -375.0
+rect_pivot_offset = Vector2( 87, 37 )
+custom_fonts/font = SubResource( 5 )
+text = "EASY"
+
+[node name="Medium" type="Button" parent="."]
+margin_left = 425.0
+margin_top = -325.0
+margin_right = 600.0
+margin_bottom = -250.0
+rect_pivot_offset = Vector2( 87, 37 )
+custom_fonts/font = SubResource( 5 )
+text = "MEDIUM"
+
+[node name="Hard" type="Button" parent="."]
+margin_left = 425.0
+margin_top = -200.0
+margin_right = 600.0
+margin_bottom = -125.0
+rect_pivot_offset = Vector2( 87, 37 )
+custom_fonts/font = SubResource( 5 )
+text = "HARD"
+
+[node name="FrameEdge" type="Sprite" parent="."]
+position = Vector2( 14, -535 )
+scale = Vector2( 3, 3.11111 )
+texture = ExtResource( 7 )
+
+[node name="FrameEdge2" type="Sprite" parent="."]
+position = Vector2( 1010, -535.777 )
+rotation = 1.5708
+scale = Vector2( 3.0495, 3 )
+texture = ExtResource( 7 )
+
+[node name="Area2D" parent="." instance=ExtResource( 3 )]
+
+[connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="Easy" to="." method="_on_Easy_pressed"]
+[connection signal="pressed" from="Medium" to="." method="_on_Medium_pressed"]
+[connection signal="pressed" from="Hard" to="." method="_on_Hard_pressed"]
+
+[editable path="Paret1"]
+[editable path="Paret2"]
+[editable path="Paret3"]

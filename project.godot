@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="Primer- Joc"
-run/main_scene="res://Escenes/Pantalla_Cossos.tscn"
+run/main_scene="res://Escenes/Pantalla_Inicial.tscn"
 config/icon="res://icon.png"
 
 [display]
